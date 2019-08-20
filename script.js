@@ -56,10 +56,30 @@ class Calculator_class {
     // Multiplies the 2 numbers passed in and returns the result
     // It also updates the running total property
     // TODO: Student implement the method for multiplication
+
+    mult(first_int, second_int)
+    {
+        this._first_int = first_int;
+        this._second_int = second_int;
+        this.update_current_calculation_result(first_number * second_number);
+        return this.current_calculation_result;
+    }
    
     // Divides the 2 numbers passed in and returns the result
     // It also updates the running total property
     // TODO: Student implement the method for division
+
+    div(first_int, second_int)
+    {
+        this._first_int = first_int;
+        this._second_int = second_int;
+        this.update_current_calculation_result(first_number / second_number);
+        return this.current_calculation_result;
+    }
+
+
+
+
 
 }
 
@@ -70,7 +90,9 @@ class Calculator_class {
 // POE Main execution path (execution starts here)
 //
 /********************************************************************************/
-function main() {
+
+function main()
+{
     let calculator_instance = new Calculator_class(); // Get a new calculator instance
     let current_operation = "ADD";
 
@@ -80,7 +102,7 @@ function main() {
     console.log(`Total : ${calculator_instance.get_current_calculation_result()}`);
 
     // Get the operation to perform from the User
-    current_operation = prompt("Enter the math operation to be performed (ADD)")
+    current_operation = prompt("Enter the math operation to be performed (ADD)(SUB)(MUL)(DIV)")
         .toUpperCase();
 
     // Get the 2 numbers for the operation
@@ -88,10 +110,21 @@ function main() {
     let second_int = parseInt(prompt(`Enter the 2nd number for ${current_operation}`));
 
     // Perform the operation and display the results
-    // TODO: Student to implement support for CLR (clear), SUB (subtract), MULT (multiply), and DIV (division Calculator methods
-    switch (current_operation) {
+    // TODO: Student to implement support for CLR (clear), SUB (subtract), MULTI (multiply), and DIV (division Calculator methods
+    switch (current_operation)
+    {
         case "ADD":
             alert(`New sum Total : ${calculator_instance.add(first_int, second_int)}`);
+            break;
+        case "SUB":
+            alert(`New sum Total : ${calculator_instance.sub(first_int, second_int)}`);
+            break;
+        case "MULTIPLY":
+            alert(`New sum Total : ${calculator_instance.mult(first_int, second_int)}`);
+            break;
+        case "DIVIDE":
+            alert(`New sum Total : ${calculator_instance.div(first_int, second_int)}`);
+            break;
     }
     // Print the final calculation total in console for debugging purposes
     console.log(`Final Total : ${calculator_instance.get_current_calculation_result()}`);
