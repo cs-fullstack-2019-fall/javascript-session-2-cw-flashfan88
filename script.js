@@ -98,12 +98,17 @@ function main()
 
     // TODO: Student implement functionality to keep asking the User for next math operation
     //  until they enter 'x' to exit
+
+// NOTE : no while loop
+
     // Start by just displaying the current total
     console.log(`Total : ${calculator_instance.get_current_calculation_result()}`);
 
     // Get the operation to perform from the User
     current_operation = prompt("Enter the math operation to be performed (ADD)(SUB)(MUL)(DIV)")
         .toUpperCase();
+
+// NOTE : no functionality for CLEAR
 
     // Get the 2 numbers for the operation
     let first_int = parseInt(prompt(`Enter the 1st number for ${current_operation}`));
